@@ -29,7 +29,13 @@ class _WrapperState extends State<Wrapper> {
       case 3:
         return Asset();
       case 4:
-        return Profile();
+        return Profile(
+          switchTab: (index) {
+            setState(() {
+              _currentPageIndex = index;
+            });
+          },
+        );
       default:
         return Container();
     }
@@ -40,7 +46,7 @@ class _WrapperState extends State<Wrapper> {
         {
           'title': 'Order',
           'icon': CustomIconData.order,
-          'action': AppBarActionButton(icon: CustomIconData.history, onTap: (){}),
+          'action': AppBarActionButton(icon: CustomIconData.history, onTap: () {}),
         },
         {'title': 'Trade', 'icon': null},
         {'title': 'Assets', 'icon': CustomIconData.asset},
@@ -88,8 +94,9 @@ class _WrapperState extends State<Wrapper> {
                   _currentPageIndex = 2;
                 });
               },
-              child: ImageIcon(
-                AssetImage('assets/logos/ct2.png'),
+              child: Icon(
+                CustomIconData.app_logo,
+                size: 30,
                 color: _currentPageIndex == 2 ? Constants.primary_color : Constants.grey1,
               )),
         ),

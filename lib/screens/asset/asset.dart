@@ -2,6 +2,7 @@ import 'package:ct_app/constants/constants.dart';
 import 'package:ct_app/constants/custom_icon_data.dart';
 import 'package:ct_app/routes/routes.dart';
 import 'package:ct_app/screens/asset/transaction_history_item.dart';
+import 'package:ct_app/screens/reusable_widget/custom_number_paginator.dart';
 import 'package:flutter/material.dart';
 import 'package:number_paginator/number_paginator.dart';
 
@@ -34,30 +35,51 @@ class Asset extends StatelessWidget {
                     ],
                   ),
                 ),
-                InkWell(
-                  onTap: () => Navigator.pushNamed(context, Routes.withdraw),
-                  child: Column(
-                    children: [
-                      Container(
-                        padding: EdgeInsets.all(10),
-                        decoration: BoxDecoration(
-                            color: Constants.secondary_color,
-                            borderRadius: BorderRadius.circular(8.0)),
-                        child: Center(
-                          child: Icon(
-                            CustomIconData.withdraw,
-                            color: Constants.primary_color,
+                ...[
+                  {
+                    'icon': CustomIconData.deposit,
+                    'label': 'Deposit',
+                    'onTap': () => Navigator.pushNamed(context, Routes.deposit)
+                  },
+                  {
+                    'icon': CustomIconData.withdraw,
+                    'label': 'Withdraw',
+                    'onTap': () => Navigator.pushNamed(context, Routes.withdraw)
+                  }
+                ]
+                    .asMap()
+                    .map((i, e) => MapEntry(
+                          i,
+                          Padding(
+                            padding: i == 0 ? const EdgeInsets.only(right: 20.0) : EdgeInsets.zero,
+                            child: InkWell(
+                              onTap: e['onTap'] as VoidCallback,
+                              child: Column(
+                                children: [
+                                  Container(
+                                    padding: EdgeInsets.all(10),
+                                    decoration: BoxDecoration(
+                                        color: Constants.secondary_color,
+                                        borderRadius: BorderRadius.circular(8.0)),
+                                    child: Center(
+                                      child: Icon(
+                                        e['icon'] as IconData,
+                                        color: Constants.primary_color,
+                                      ),
+                                    ),
+                                  ),
+                                  SizedBox(height: 4),
+                                  Text(
+                                    e['label'] as String,
+                                    style: TextStyle(fontSize: 9),
+                                  )
+                                ],
+                              ),
+                            ),
                           ),
-                        ),
-                      ),
-                      SizedBox(height: 4),
-                      Text(
-                        'Withdraw',
-                        style: TextStyle(fontSize: 9),
-                      )
-                    ],
-                  ),
-                )
+                        ))
+                    .values
+                    .toList()
               ],
             ),
           ),
@@ -66,17 +88,7 @@ class Asset extends StatelessWidget {
           SizedBox(height: 8),
           ...List.generate(3, (index) => TransactionHistoryItem()),
           Spacer(),
-          NumberPaginator(
-            numberPages: 4,
-            initialPage: 1,
-            onPageChange: (int index) {},
-            prevButtonContent: Icon(Icons.arrow_left),
-            nextButtonContent: Icon(Icons.arrow_right),
-            config: NumberPaginatorUIConfig(
-                height: 40,
-                buttonShape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),
-                buttonSelectedBackgroundColor: Constants.primary_color),
-          ),
+          CustomNumberPaginator(),
           SizedBox(height: kToolbarHeight),
         ],
       ),

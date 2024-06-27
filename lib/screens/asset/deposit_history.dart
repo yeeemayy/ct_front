@@ -1,6 +1,7 @@
 import 'package:ct_app/constants/constants.dart';
 import 'package:ct_app/custom_widgets/custom_app_bar.dart';
 import 'package:ct_app/screens/asset/deposit_history_item.dart';
+import 'package:ct_app/screens/reusable_widget/custom_number_paginator.dart';
 import 'package:flutter/material.dart';
 import 'package:number_paginator/number_paginator.dart';
 
@@ -27,17 +28,7 @@ class _DepositHistoryState extends State<DepositHistory> {
                 ...List.generate(
                     3,
                     (index) => DepositHistoryItem(index: index+1)),Spacer(),
-                NumberPaginator(
-                  numberPages: 4,
-                  initialPage: 1,
-                  onPageChange: (int index) {},
-                  prevButtonContent: Icon(Icons.arrow_left),
-                  nextButtonContent: Icon(Icons.arrow_right),
-                  config: NumberPaginatorUIConfig(
-                      height: 40,
-                      buttonShape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),
-                      buttonSelectedBackgroundColor: Constants.primary_color),
-                ),
+                CustomNumberPaginator(),
                 SizedBox(height: kToolbarHeight)
               ],
             ),

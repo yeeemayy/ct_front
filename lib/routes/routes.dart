@@ -16,5 +16,7 @@ class Routes {
   static const announcement_details = '/announcement-details';
   static const info = '/info';
   static const support = '/support';
-  static const download_centre = '/download_centre';
+  static const download_centre = '/download-centre';
+  static const invite_friends = '/invite-friends';
+  static const my_team = '/my-team';
 }

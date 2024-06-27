@@ -12,6 +12,8 @@ import 'package:ct_app/screens/profile/download_centre.dart';
 import 'package:ct_app/screens/profile/edit_profile.dart';
 import 'package:ct_app/screens/profile/info.dart';
 import 'package:ct_app/screens/profile/kyc.dart';
+import 'package:ct_app/screens/profile/my_team.dart';
+import 'package:ct_app/screens/profile/referral.dart';
 import 'package:ct_app/screens/profile/security_centre.dart';
 import 'package:ct_app/screens/profile/support.dart';
 import 'package:ct_app/screens/profile/withdrawal_detail.dart';
@@ -58,6 +60,10 @@ class RouteGenerator {
         return buildRoute(const Support(), settings: settings);
       case Routes.download_centre:
         return buildRoute(const DownloadCentre(), settings: settings);
+      case Routes.invite_friends:
+        return buildRoute(const Referral(), settings: settings);
+      case Routes.my_team:
+        return buildRoute(const MyTeam(), settings: settings);
       default:
         return _errorRoute();
     }

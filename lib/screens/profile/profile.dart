@@ -6,7 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 class Profile extends StatelessWidget {
-  const Profile({super.key});
+  final Function(int) switchTab;
+  const Profile({super.key, required this.switchTab});
 
   @override
   Widget build(BuildContext context) {
@@ -56,7 +57,7 @@ class Profile extends StatelessWidget {
                   ),
                   SizedBox(height: 24),
                   InkWell(
-                    onTap: () => Navigator.pushNamed(context, Routes.deposit),
+                    onTap: () => switchTab(3),
                     child: Container(
                       padding: EdgeInsets.symmetric(vertical: 18, horizontal: 20),
                       decoration: BoxDecoration(
@@ -84,7 +85,11 @@ class Profile extends StatelessWidget {
                   ),
                   SizedBox(height: 10),
                   _buildSection('Account Verification', [
-                    {'icon': CustomIconData.kyc, 'title': 'KYC', 'onTap': () => Navigator.pushNamed(context, Routes.kyc)},
+                    {
+                      'icon': CustomIconData.kyc,
+                      'title': 'KYC',
+                      'onTap': () => Navigator.pushNamed(context, Routes.kyc)
+                    },
                   ]),
                   _buildSection('Settings', [
                     {
@@ -102,14 +107,30 @@ class Profile extends StatelessWidget {
                     {
                       'icon': CustomIconData.invite_friends,
                       'title': 'Invite Friends',
-                      'onTap': () {}
+                      'onTap': () => Navigator.pushNamed(context, Routes.invite_friends)
                     },
-                    {'icon': CustomIconData.my_team, 'title': 'My Team', 'onTap': () {}},
+                    {
+                      'icon': CustomIconData.my_team,
+                      'title': 'My Team',
+                      'onTap': () => Navigator.pushNamed(context, Routes.my_team)
+                    },
                   ]),
                   _buildSection('Information & Contact', [
-                    {'icon': CustomIconData.announcement, 'title': 'Announcement', 'onTap': () => Navigator.pushNamed(context, Routes.announcement)},
-                    {'icon': CustomIconData.info, 'title': 'Info', 'onTap': () => Navigator.pushNamed(context, Routes.info)},
-                    {'icon': CustomIconData.support, 'title': 'Support', 'onTap': () => Navigator.pushNamed(context, Routes.support)},
+                    {
+                      'icon': CustomIconData.announcement,
+                      'title': 'Announcement',
+                      'onTap': () => Navigator.pushNamed(context, Routes.announcement)
+                    },
+                    {
+                      'icon': CustomIconData.info,
+                      'title': 'Info',
+                      'onTap': () => Navigator.pushNamed(context, Routes.info)
+                    },
+                    {
+                      'icon': CustomIconData.support,
+                      'title': 'Support',
+                      'onTap': () => Navigator.pushNamed(context, Routes.support)
+                    },
                     {
                       'icon': CustomIconData.download_center,
                       'title': 'Download Center',
@@ -120,7 +141,8 @@ class Profile extends StatelessWidget {
                     child: Padding(
                       padding: const EdgeInsets.symmetric(vertical: 10.0),
                       child: ElevatedButton.icon(
-                        onPressed: () => Navigator.pushNamedAndRemoveUntil(context, Routes.splash, (route) => false),
+                        onPressed: () => Navigator.pushNamedAndRemoveUntil(
+                            context, Routes.splash, (route) => false),
                         icon: Icon(
                           Icons.logout,
                           size: 20,
