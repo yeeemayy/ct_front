@@ -12,7 +12,7 @@ class PasswordStrengthIndicator extends StatelessWidget {
   final int type; //1: password, 2: pin
   final String password;
 
-  const PasswordStrengthIndicator({Key? key, this.type = 1, required this.password}) : super(key: key);
+  const PasswordStrengthIndicator({super.key, this.type = 1, required this.password});
 
   List<PasswordStrength> _passwordStrength() {
     return type == 1 ? [
@@ -36,15 +36,14 @@ class PasswordStrengthIndicator extends StatelessWidget {
                   children: [
                     Icon(Icons.check_circle,
                         size: 12.5,
-                        color: e.value ? Constants.primary_color : Color(0xffb2b2b2)),
-                    SizedBox(width: 10),
+                        color: e.value ? Constants.primary_color : const Color(0xffb2b2b2)),
+                    const SizedBox(width: 10),
                     Text(
                       e.text,
-                      style: TextStyle(fontSize: 11, color: Constants.grey_text),
+                      style: const TextStyle(fontSize: 11, color: Constants.grey_text),
                     )
                   ],
                 ))
-            .toList()
       ],
     );
   }

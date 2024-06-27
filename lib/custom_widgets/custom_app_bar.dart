@@ -3,8 +3,11 @@ import 'package:flutter/material.dart';
 
 class CustomAppBar extends AppBar {
   final String titleStr;
+  @override
   final bool centerTitle;
+  @override
   final bool automaticallyImplyLeading;
+  @override
   final List<Widget>? actions;
 
   CustomAppBar(
@@ -22,7 +25,7 @@ class CustomAppBar extends AppBar {
             centerTitle: centerTitle,
             title: Text(
               titleStr,
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w800),
+              style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w800),
             ),
             actions: actions);
 }

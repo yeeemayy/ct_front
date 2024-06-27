@@ -1,7 +1,6 @@
 import 'package:ct_app/constants/constants.dart';
 import 'package:ct_app/custom_widgets/custom_app_bar.dart';
 import 'package:ct_app/routes/routes.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class Announcement extends StatefulWidget {
@@ -25,17 +24,17 @@ class _AnnouncementState extends State<Announcement> {
                 (index) => InkWell(
                       onTap: () => Navigator.pushNamed(context, Routes.announcement_details),
                       child: Container(
-                        margin: EdgeInsets.symmetric(vertical: 8),
-                        decoration: BoxDecoration(
+                        margin: const EdgeInsets.symmetric(vertical: 8),
+                        decoration: const BoxDecoration(
                             color: Constants.secondary_color,
                             borderRadius: BorderRadius.horizontal(right: Radius.circular(10))),
                         child: IntrinsicHeight(
                           child: Row(
                             children: [
                               Container(width: 4, color: Constants.primary_color),
-                              Expanded(
+                              const Expanded(
                                 child: Padding(
-                                  padding: const EdgeInsets.all(16.0),
+                                  padding: EdgeInsets.all(16.0),
                                   child: Column(
                                     crossAxisAlignment: CrossAxisAlignment.start,
                                     children: [

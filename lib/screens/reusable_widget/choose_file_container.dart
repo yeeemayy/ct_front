@@ -26,15 +26,15 @@ class _ChooseFileContainerState extends State<ChooseFileContainer> {
       context: context,
       builder: (BuildContext context) => CupertinoActionSheet(
         cancelButton: CupertinoActionSheetAction(
-          child: Text('Cancel'),
           onPressed: () {
             Navigator.pop(context);
           },
           isDestructiveAction: true,
+          child: const Text('Cancel'),
         ),
         actions: <CupertinoActionSheetAction>[
           CupertinoActionSheetAction(
-            child: Text(
+            child: const Text(
               'Choose from Gallery',
               style: TextStyle(color: Constants.primary_color),
             ),
@@ -49,7 +49,7 @@ class _ChooseFileContainerState extends State<ChooseFileContainer> {
             },
           ),
           CupertinoActionSheetAction(
-            child: Text(
+            child: const Text(
               'Choose from Files',
               style: TextStyle(color: Constants.primary_color),
             ),
@@ -81,8 +81,8 @@ class _ChooseFileContainerState extends State<ChooseFileContainer> {
       onTap: _showFileSelectionBottomSheet,
       child: Container(
         alignment: Alignment.center,
-        margin: EdgeInsets.symmetric(vertical: 8),
-        padding: EdgeInsets.symmetric(vertical: 20),
+        margin: const EdgeInsets.symmetric(vertical: 8),
+        padding: const EdgeInsets.symmetric(vertical: 20),
         width: double.maxFinite,
         constraints: BoxConstraints(minHeight: widget.minHeight ?? 0),
         decoration: BoxDecoration(
@@ -90,7 +90,7 @@ class _ChooseFileContainerState extends State<ChooseFileContainer> {
           borderRadius: BorderRadius.circular(10),
         ),
         child: _attachment == null
-            ? Column(children: [
+            ? const Column(children: [
                 Icon(CustomIconData.add_square, size: 24, color: Constants.primary_color),
                 SizedBox(height: 8),
                 Text('Choose File',
@@ -104,7 +104,7 @@ class _ChooseFileContainerState extends State<ChooseFileContainer> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  IconButton(
+                  const IconButton(
                     onPressed: null,
                     icon: Icon(null),
                     iconSize: 24,
@@ -136,11 +136,11 @@ class _ChooseFileContainerState extends State<ChooseFileContainer> {
                         _attachment = null;
                       });
                     },
-                    icon: Icon(Icons.close),
+                    icon: const Icon(Icons.close),
                     iconSize: 24,
                     padding: EdgeInsets.zero,
-                    constraints: BoxConstraints(),
-                    visualDensity: VisualDensity(vertical: -4),
+                    constraints: const BoxConstraints(),
+                    visualDensity: const VisualDensity(vertical: -4),
                   )
                 ],
               ),

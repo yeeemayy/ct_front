@@ -30,12 +30,12 @@ class _BankCardState extends State<BankCard> {
           mainAxisSize: MainAxisSize.max,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text('Receipt Currency', style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700)),
+            const Text('Receipt Currency', style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700)),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 8.0),
               child: CustomDropdownButton<String>(
                 hint: 'Select Currency',
-                items: ['USD', 'Item 2', 'Item 3'],
+                items: const ['USD', 'Item 2', 'Item 3'],
                 valueListenable: _selectedCurrency,
                 onChanged: (value) {
                   _selectedCurrency.value = value;
@@ -48,13 +48,13 @@ class _BankCardState extends State<BankCard> {
                 },
               ),
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             AmountTextField(controller: _amountController),
-            SizedBox(height: 24),
-            Text('Uploading Certificate',
+            const SizedBox(height: 24),
+            const Text('Uploading Certificate',
                 style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700)),
-            ChooseFileContainer(),
-            SizedBox(height: 24),
+            const ChooseFileContainer(),
+            const SizedBox(height: 24),
             Center(child: CustomElevatedButton(label: 'Submit', onPressed: (){})),
           ],
         ));

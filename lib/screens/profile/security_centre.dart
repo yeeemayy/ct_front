@@ -1,4 +1,3 @@
-import 'package:country_code_picker/country_code_picker.dart';
 import 'package:ct_app/constants/constants.dart';
 import 'package:ct_app/constants/custom_icon_data.dart';
 import 'package:ct_app/custom_widgets/custom_app_bar.dart';
@@ -59,8 +58,8 @@ class _SecurityCentreState extends State<SecurityCentre> with SingleTickerProvid
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              CustomTabBar(tabController: _tabController, tabTitles: ['Password', 'Security PIN']),
-              SizedBox(height: 8),
+              CustomTabBar(tabController: _tabController, tabTitles: const ['Password', 'Security PIN']),
+              const SizedBox(height: 8),
               [
                 Column(
                   children: [
@@ -99,7 +98,7 @@ class _SecurityCentreState extends State<SecurityCentre> with SingleTickerProvid
                           iconSize: 16,
                           color: Constants.primary_color),
                     ),
-                    SizedBox(height: 40),
+                    const SizedBox(height: 40),
                     CustomElevatedButton(label: 'Save', onPressed: () {})
                   ],
                 ),
@@ -139,7 +138,7 @@ class _SecurityCentreState extends State<SecurityCentre> with SingleTickerProvid
                           iconSize: 16,
                           color: Constants.primary_color),
                     ),
-                    SizedBox(height: 40),
+                    const SizedBox(height: 40),
                     CustomElevatedButton(label: 'Save', onPressed: () {})
                   ],
                 )

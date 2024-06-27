@@ -38,8 +38,8 @@ class _DepositState extends State<Deposit> with SingleTickerProviderStateMixin {
           child: Column(
             children: [
               CustomTabBar(
-                  tabController: _tabController, tabTitles: ['Digital Currency', 'Bank Card']),
-              [DigitalCurrency(), BankCard()][_tabController.index]
+                  tabController: _tabController, tabTitles: const ['Digital Currency', 'Bank Card']),
+              [const DigitalCurrency(), const BankCard()][_tabController.index]
             ],
           ),
         ),

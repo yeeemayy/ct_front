@@ -22,8 +22,8 @@ class MyApp extends StatelessWidget {
       navigatorKey: navigatorKey,
       theme: ThemeData(
           scaffoldBackgroundColor: Colors.white,
-          dividerColor: Color(0xfff2f2f2),
-          dividerTheme: DividerThemeData(color: Color(0xfff2f2f2), thickness: 1),
+          dividerColor: const Color(0xfff2f2f2),
+          dividerTheme: const DividerThemeData(color: Color(0xfff2f2f2), thickness: 1),
           fontFamily: 'Manrope'),
       builder: (context, child) {
         var mediaQueryData = MediaQuery.of(context);

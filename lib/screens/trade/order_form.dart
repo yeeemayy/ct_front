@@ -28,7 +28,7 @@ class _OrderFormState extends State<OrderForm> {
         children: [
           if (widget.showAmount) ...[
             CustomTextField(label: 'Amount', textEditingController: _amountController, labelFontSize: 16),
-            SizedBox(height: 8),
+            const SizedBox(height: 8),
           ],
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 8.0),
@@ -39,7 +39,7 @@ class _OrderFormState extends State<OrderForm> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text('Set Loss'),
+                      const Text('Set Loss'),
                       Checkbox(
                         value: _setLoss,
                         onChanged: (val) {
@@ -51,13 +51,13 @@ class _OrderFormState extends State<OrderForm> {
                         },
                         activeColor: Constants.primary_color,
                         shape: RoundedRectangleBorder(
-                            side: BorderSide(color: Constants.grey2),
+                            side: const BorderSide(color: Constants.grey2),
                             borderRadius: BorderRadius.circular(5)),
                       ),
                     ],
                   ),
                 ),
-                Expanded(
+                const Expanded(
                   flex: 6,
                   child: CustomInputQuantityField(),
                 )
@@ -73,7 +73,7 @@ class _OrderFormState extends State<OrderForm> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text('Take Profit'),
+                        const Text('Take Profit'),
                         Checkbox(
                           value: _takeProfit,
                           onChanged: (val) {
@@ -85,29 +85,29 @@ class _OrderFormState extends State<OrderForm> {
                           },
                           activeColor: Constants.primary_color,
                           shape: RoundedRectangleBorder(
-                              side: BorderSide(color: Constants.grey2),
+                              side: const BorderSide(color: Constants.grey2),
                               borderRadius: BorderRadius.circular(5)),
                         ),
                       ],
                     )),
-                Expanded(
+                const Expanded(
                   flex: 6,
                   child: CustomInputQuantityField(),
                 )
               ],
             ),
           ),
-          SizedBox(height: 4),
-          DetailRow(title: 'Each Lots', content: '1 Lots = 1000 XAUUSD'),
-          DetailRow(title: 'Estimated Handling Fee', content: '1.5'),
-          DetailRow(title: 'Estimated Margin', content: '100'),
-          DetailRow(title: 'Balance', content: '34373.5'),
+          const SizedBox(height: 4),
+          const DetailRow(title: 'Each Lots', content: '1 Lots = 1000 XAUUSD'),
+          const DetailRow(title: 'Estimated Handling Fee', content: '1.5'),
+          const DetailRow(title: 'Estimated Margin', content: '100'),
+          const DetailRow(title: 'Balance', content: '34373.5'),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 16.0),
             child: Row(
               children: [
                 Expanded(child: CustomElevatedButton(label: 'Buy', onPressed: () {})),
-                SizedBox(width: 10),
+                const SizedBox(width: 10),
                 Expanded(
                     child: CustomElevatedButton(
                         label: 'Sell', onPressed: () {}, backgroundColor: Constants.red)),

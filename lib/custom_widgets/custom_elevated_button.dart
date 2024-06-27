@@ -17,13 +17,13 @@ class CustomElevatedButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
+      onPressed: onPressed,
+      style: ElevatedButton.styleFrom(
+          backgroundColor: backgroundColor, padding: const EdgeInsets.symmetric(vertical: 9), minimumSize: const Size(150, 40)),
       child: Text(
         label,
         style: TextStyle(color: Colors.white, fontSize: labelFontSize, fontWeight: FontWeight.w700),
       ),
-      onPressed: onPressed,
-      style: ElevatedButton.styleFrom(
-          backgroundColor: backgroundColor, padding: EdgeInsets.symmetric(vertical: 9), minimumSize: Size(150, 40)),
     );
   }
 }

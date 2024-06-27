@@ -7,8 +7,8 @@ class TransactionHistoryItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 8),
-      padding: EdgeInsets.all(16),
+      margin: const EdgeInsets.symmetric(vertical: 8),
+      padding: const EdgeInsets.all(16),
       decoration:
           BoxDecoration(color: Constants.secondary_color, borderRadius: BorderRadius.circular(10)),
       child: const Column(

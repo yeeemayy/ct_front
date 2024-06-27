@@ -30,9 +30,9 @@ class _OrderState extends State<Order> with SingleTickerProviderStateMixin {
         children: [
           CustomTabBar(
             tabController: _tabController,
-            tabTitles: ['Position Holding', 'Pending Orders'],
+            tabTitles: const ['Position Holding', 'Pending Orders'],
           ),
-          [PositionHolding(), OrderForm()][_tabController.index]
+          [const PositionHolding(), const OrderForm()][_tabController.index]
         ],
       ),
     );

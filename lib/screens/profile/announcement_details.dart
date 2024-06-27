@@ -14,21 +14,21 @@ class AnnouncementDetails extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text('System Under Maintenance',
+            const Text('System Under Maintenance',
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.w800)),
-            SizedBox(height: 8),
-            Text(
+            const SizedBox(height: 8),
+            const Text(
               '13 July 2023 | 13:13',
               style: TextStyle(fontSize: 11, color: Constants.grey_text),
             ),
             Container(
               width: double.maxFinite,
               height: 217,
-              margin: EdgeInsets.symmetric(vertical: 24),
+              margin: const EdgeInsets.symmetric(vertical: 24),
               color: Constants.secondary_color,
-              child: Icon(Icons.image, color: Constants.primary_color),
+              child: const Icon(Icons.image, color: Constants.primary_color),
             ),
-            Text(
+            const Text(
               '''
 Dear CT Users,
 

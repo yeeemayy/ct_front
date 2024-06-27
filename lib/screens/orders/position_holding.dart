@@ -12,33 +12,33 @@ class PositionHolding extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
+          const Text(
             'Portfolio and Loss',
             style: TextStyle(fontSize: 13, fontWeight: FontWeight.w600),
           ),
           Container(
             width: double.maxFinite,
             alignment: Alignment.center,
-            padding: EdgeInsets.symmetric(vertical: 8),
-            margin: EdgeInsets.symmetric(vertical: 10),
+            padding: const EdgeInsets.symmetric(vertical: 8),
+            margin: const EdgeInsets.symmetric(vertical: 10),
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
                 color: Colors.white,
-                boxShadow: [BoxShadow(color: Colors.black12, offset: Offset(1, 2), blurRadius: 2)]),
-            child: Text('2.4', style: TextStyle(fontSize: 32, color: Constants.primary_color)),
+                boxShadow: const [BoxShadow(color: Colors.black12, offset: Offset(1, 2), blurRadius: 2)]),
+            child: const Text('2.4', style: TextStyle(fontSize: 32, color: Constants.primary_color)),
           ),
-          DetailRow(title: 'Balance', content: '32514.5'),
-          DetailRow(title: 'Current Margin', content: '100'),
-          DetailRow(title: 'Risk Rate', content: '34475.904%'),
-          SizedBox(height: 6),
+          const DetailRow(title: 'Balance', content: '32514.5'),
+          const DetailRow(title: 'Current Margin', content: '100'),
+          const DetailRow(title: 'Risk Rate', content: '34475.904%'),
+          const SizedBox(height: 6),
           Container(
-            margin: EdgeInsets.symmetric(vertical: 8),
-            padding: EdgeInsets.symmetric(vertical: 16, horizontal: 20),
+            margin: const EdgeInsets.symmetric(vertical: 8),
+            padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 20),
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10), color: Constants.secondary_color),
             child: Column(
               children: [
-                Row(
+                const Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text('XAUUSD', style: TextStyle(
@@ -49,11 +49,11 @@ class PositionHolding extends StatelessWidget {
                     ))
                   ],
                 ),
-                SizedBox(height: 8),
+                const SizedBox(height: 8),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text('2175.79  ->  2175.53', style: TextStyle(
+                    const Text('2175.79  ->  2175.53', style: TextStyle(
                         fontSize: 11, fontWeight: FontWeight.w600
                     )),
                     Container(
@@ -64,18 +64,18 @@ class PositionHolding extends StatelessWidget {
                       child: Row(
                         children: [
                           Container(
-                            padding: EdgeInsets.symmetric(horizontal: 8),
-                            decoration: BoxDecoration(
+                            padding: const EdgeInsets.symmetric(horizontal: 8),
+                            decoration: const BoxDecoration(
                                 borderRadius: BorderRadius.horizontal(left: Radius.circular(5)),
 
                                 color: Constants.primary_color
                       ),
-                            child: Text('Buy', style: TextStyle(
+                            child: const Text('Buy', style: TextStyle(
                               fontSize: 11, color: Colors.white
                             ),),
                           ),
-                          Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                          const Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 8.0),
                             child: Text('0.1 Lots', style: TextStyle(
                               fontSize: 10 ,color: Constants.primary_color
                             ),),
@@ -85,7 +85,7 @@ class PositionHolding extends StatelessWidget {
                     )
                   ],
                 ),
-                Row(crossAxisAlignment: CrossAxisAlignment.end,
+                const Row(crossAxisAlignment: CrossAxisAlignment.end,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text('2024-03-12 06:41:15', style: TextStyle(

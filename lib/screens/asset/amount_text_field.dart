@@ -14,9 +14,9 @@ class AmountTextField extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
-            Text('Amount', style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700)),
+            const Text('Amount', style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700)),
             RichText(
-                text: TextSpan(
+                text: const TextSpan(
                     style: TextStyle(fontSize: 11, color: Constants.grey_text),
                     children: [
                       TextSpan(text: 'Asset Balance: '),
@@ -25,7 +25,7 @@ class AmountTextField extends StatelessWidget {
           ],
         ),
         CustomTextField(textEditingController: controller),
-        Align(
+        const Align(
           alignment: Alignment.centerRight,
           child: Text(
             '1 USD = 4 MYR',

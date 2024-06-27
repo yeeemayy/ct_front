@@ -2,7 +2,6 @@ import 'package:ct_app/constants/constants.dart';
 import 'package:ct_app/custom_widgets/custom_app_bar.dart';
 import 'package:ct_app/screens/reusable_widget/custom_number_paginator.dart';
 import 'package:flutter/material.dart';
-import 'package:number_paginator/number_paginator.dart';
 
 class MyTeam extends StatelessWidget {
   const MyTeam({super.key});
@@ -16,7 +15,7 @@ class MyTeam extends StatelessWidget {
         child: Column(
           children: [
             Container(
-              padding: EdgeInsets.symmetric(vertical: 16),
+              padding: const EdgeInsets.symmetric(vertical: 16),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
                 color: Constants.secondary_color,
@@ -24,7 +23,7 @@ class MyTeam extends StatelessWidget {
               child: IntrinsicHeight(
                 child: Row(
                   children: [
-                    Expanded(
+                    const Expanded(
                         child: Column(
                       children: [
                         Text('Total Number of Invites', style: TextStyle(fontSize: 10)),
@@ -40,7 +39,7 @@ class MyTeam extends StatelessWidget {
                       height: 50,
                       child: VerticalDivider(color: Constants.primary_color.withOpacity(0.3)),
                     ),
-                    Expanded(
+                    const Expanded(
                         child: Column(
                       children: [
                         Text('Total Profit & Loss', style: TextStyle(fontSize: 10)),
@@ -56,12 +55,12 @@ class MyTeam extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 8),
+            const SizedBox(height: 8),
             ...List.generate(
                 4,
                 (index) => Container(
-                      margin: EdgeInsets.symmetric(vertical: 8),
-                      padding: EdgeInsets.symmetric(vertical: 16),
+                      margin: const EdgeInsets.symmetric(vertical: 8),
+                      padding: const EdgeInsets.symmetric(vertical: 16),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
                         color: Constants.secondary_color,
@@ -73,11 +72,11 @@ class MyTeam extends StatelessWidget {
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Text('yy01',
+                                const Text('yy01',
                                     style: TextStyle(fontSize: 12, fontWeight: FontWeight.w700)),
                                 Container(
-                                  padding: EdgeInsets.symmetric(vertical: 2),
-                                  constraints: BoxConstraints(minWidth: 70),
+                                  padding: const EdgeInsets.symmetric(vertical: 2),
+                                  constraints: const BoxConstraints(minWidth: 70),
                                   decoration: BoxDecoration(
                                     color:
                                         index % 2 == 0 ? Constants.primary_color : Constants.grey1,
@@ -86,7 +85,7 @@ class MyTeam extends StatelessWidget {
                                   alignment: Alignment.center,
                                   child: Text(
                                     index % 2 == 0 ? 'Trader' : 'Member',
-                                    style: TextStyle(
+                                    style: const TextStyle(
                                         fontSize: 11,
                                         fontWeight: FontWeight.w700,
                                         color: Colors.white),
@@ -99,8 +98,8 @@ class MyTeam extends StatelessWidget {
                             color: Constants.primary_color.withOpacity(0.3),
                             height: 30,
                           ),
-                          Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                          const Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 20.0),
                             child: Column(
                               children: [
                                 Row(
@@ -129,8 +128,8 @@ class MyTeam extends StatelessWidget {
                         ],
                       ),
                     )),
-            Spacer(),
-            CustomNumberPaginator(),
+            const Spacer(),
+            const CustomNumberPaginator(),
           ],
         ),
       ),

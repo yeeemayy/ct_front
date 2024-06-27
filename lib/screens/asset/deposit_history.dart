@@ -1,9 +1,7 @@
-import 'package:ct_app/constants/constants.dart';
 import 'package:ct_app/custom_widgets/custom_app_bar.dart';
 import 'package:ct_app/screens/asset/deposit_history_item.dart';
 import 'package:ct_app/screens/reusable_widget/custom_number_paginator.dart';
 import 'package:flutter/material.dart';
-import 'package:number_paginator/number_paginator.dart';
 
 class DepositHistory extends StatefulWidget {
   const DepositHistory({super.key});
@@ -27,9 +25,9 @@ class _DepositHistoryState extends State<DepositHistory> {
               children: [
                 ...List.generate(
                     3,
-                    (index) => DepositHistoryItem(index: index+1)),Spacer(),
-                CustomNumberPaginator(),
-                SizedBox(height: kToolbarHeight)
+                    (index) => DepositHistoryItem(index: index+1)),const Spacer(),
+                const CustomNumberPaginator(),
+                const SizedBox(height: kToolbarHeight)
               ],
             ),
           ),

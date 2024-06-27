@@ -12,20 +12,20 @@ class DepositHistoryItem extends StatelessWidget {
       decoration: BoxDecoration(
           color: Constants.secondary_color,
           borderRadius: BorderRadius.circular(10)),
-      margin: EdgeInsets.symmetric(vertical: 8),
-      padding: EdgeInsets.all(16),
+      margin: const EdgeInsets.symmetric(vertical: 8),
+      padding: const EdgeInsets.all(16),
       child: Column(
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text('12 Sep 2023 - 06:35:00',
+              const Text('12 Sep 2023 - 06:35:00',
                   style: TextStyle(fontSize: 10, color: Constants.grey_text)),
               StatusBadge(status: index)
             ],
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 8.0),
+          const Padding(
+            padding: EdgeInsets.symmetric(vertical: 8.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -40,7 +40,7 @@ class DepositHistoryItem extends StatelessWidget {
               ],
             ),
           ),
-          Row(
+          const Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text('Type',

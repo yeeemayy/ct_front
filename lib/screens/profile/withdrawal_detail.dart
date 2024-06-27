@@ -39,7 +39,7 @@ class _WithdrawalDetailState extends State<WithdrawalDetail> {
                 padding: const EdgeInsets.symmetric(vertical: 8.0),
                 child: CustomDropdownButton<String>(
                   hint: 'Choose Withdrawal Method',
-                  items: ['Bank', 'Item 1', 'item 2', 'Item 3'],
+                  items: const ['Bank', 'Item 1', 'item 2', 'Item 3'],
                   valueListenable: _selectedWithdrawalMethod,
                   onChanged: (value) {
                     _selectedWithdrawalMethod.value = value;
@@ -55,7 +55,7 @@ class _WithdrawalDetailState extends State<WithdrawalDetail> {
               CustomTextField(textEditingController: _bankNameController, hintText: 'Bank Name'),
               CustomTextField(textEditingController: _bankHolderController, hintText: 'Bank Account Holder'),
               CustomTextField(textEditingController: _bankNumberController, hintText: 'Bank Account Number'),
-              SizedBox(height: 40),
+              const SizedBox(height: 40),
               Center(child: CustomElevatedButton(label: 'Save', onPressed: (){}))
             ],
           ),

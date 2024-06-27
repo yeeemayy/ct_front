@@ -7,7 +7,7 @@ class Info extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<Map<String, dynamic>> _info = [
+    List<Map<String, dynamic>> info = [
       {
         'question': 'What is CT?',
         'answer':
@@ -31,9 +31,9 @@ class Info extends StatelessWidget {
         padding: const EdgeInsets.all(20.0),
         child: Column(
           children: [
-            ..._info
+            ...info
                 .map((e) => Container(
-                      margin: EdgeInsets.symmetric(vertical: 8),
+                      margin: const EdgeInsets.symmetric(vertical: 8),
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(8), color: Constants.secondary_color),
                       child: Theme(
@@ -41,19 +41,18 @@ class Info extends StatelessWidget {
                         child: ExpansionTile(
                           title: Text(
                             e['question'],
-                            style: TextStyle(fontSize: 12, fontWeight: FontWeight.w700),
+                            style: const TextStyle(fontSize: 12, fontWeight: FontWeight.w700),
                           ),
-                          childrenPadding: EdgeInsets.fromLTRB(16, 0, 50, 20),
+                          childrenPadding: const EdgeInsets.fromLTRB(16, 0, 50, 20),
                           children: [
                             Text(
                               e['answer'],
-                              style: TextStyle(fontSize: 11, color: Constants.grey_text),
+                              style: const TextStyle(fontSize: 11, color: Constants.grey_text),
                             )
                           ],
                         ),
                       ),
                     ))
-                .toList()
           ],
         ),
       ),

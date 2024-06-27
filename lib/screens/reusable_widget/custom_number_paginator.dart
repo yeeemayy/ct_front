@@ -12,14 +12,14 @@ class CustomNumberPaginator extends StatelessWidget {
       numberPages: 4,
       initialPage: 0,
       onPageChange: (int index) {},
-      prevButtonContent: Icon(CustomIconData.keyboard_arrow_left, size: 12),
-      nextButtonContent: Icon(CustomIconData.keyboard_arrow_right, size: 12),
+      prevButtonContent: const Icon(CustomIconData.keyboard_arrow_left, size: 12),
+      nextButtonContent: const Icon(CustomIconData.keyboard_arrow_right, size: 12),
       config: NumberPaginatorUIConfig(
           height: 40,
           buttonShape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),
           buttonSelectedBackgroundColor: Constants.primary_color,
           buttonUnselectedForegroundColor: Constants.primary_color,
-          buttonTextStyle: TextStyle(fontWeight: FontWeight.w700)),
+          buttonTextStyle: const TextStyle(fontWeight: FontWeight.w700)),
     );
   }
 }

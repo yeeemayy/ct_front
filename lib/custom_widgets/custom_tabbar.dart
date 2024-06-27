@@ -12,7 +12,7 @@ class CustomTabBar extends StatelessWidget {
     return Container(
       height: 45,
       decoration: BoxDecoration(
-        color: Color(0xffededed),
+        color: const Color(0xffededed),
         borderRadius: BorderRadius.circular(10),
       ),
       child: TabBar(
@@ -23,7 +23,7 @@ class CustomTabBar extends StatelessWidget {
           color: Constants.primary_color,
         ),
         labelColor: Colors.white,
-        labelStyle: TextStyle(fontSize: 14),
+        labelStyle: const TextStyle(fontSize: 14),
         unselectedLabelColor: Colors.black,
         tabs: tabTitles.map((e) => Tab(text: e)).toList(),
       ),

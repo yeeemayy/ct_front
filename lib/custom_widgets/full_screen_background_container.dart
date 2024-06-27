@@ -8,13 +8,12 @@ class FullScreenBackgroundContainer extends StatefulWidget {
   final double opacity;
 
   FullScreenBackgroundContainer(
-      {Key? key,
+      {super.key,
       this.backgroundImage,
       this.backgroundVideo,
       required this.child,
       this.height,
-      this.opacity = 1})
-      : super(key: key) {
+      this.opacity = 1}) {
     assert(backgroundImage != null || backgroundVideo != null,
         "Either backgroundImage or backgroundVideo must not be null");
   }

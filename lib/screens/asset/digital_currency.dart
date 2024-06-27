@@ -32,12 +32,12 @@ class _DigitalCurrencyState extends State<DigitalCurrency> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text('Select Network', style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700)),
+          const Text('Select Network', style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700)),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 8.0),
             child: CustomDropdownButton<String>(
               hint: 'Select Network',
-              items: ['USDC-ERC20', 'Item 2', 'Item 3'],
+              items: const ['USDC-ERC20', 'Item 2', 'Item 3'],
               valueListenable: _selectedNetwork,
               onChanged: (value) {
                 _selectedNetwork.value = value;
@@ -51,12 +51,12 @@ class _DigitalCurrencyState extends State<DigitalCurrency> {
             ),
           ),
           Container(
-            margin: EdgeInsets.symmetric(vertical: 12),
+            margin: const EdgeInsets.symmetric(vertical: 12),
             width: double.maxFinite,
             decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(10),
-                boxShadow: [BoxShadow(blurRadius: 4, color: Colors.black12)]),
+                boxShadow: const [BoxShadow(blurRadius: 4, color: Colors.black12)]),
             child: Column(
               children: [
                 QrImageView(
@@ -65,26 +65,26 @@ class _DigitalCurrencyState extends State<DigitalCurrency> {
                   size: 155,
                 ),
                 Container(
-                  padding: EdgeInsets.only(top: 13),
+                  padding: const EdgeInsets.only(top: 13),
                   width: double.maxFinite,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                       borderRadius: BorderRadius.vertical(bottom: Radius.circular(10)),
                       color: Constants.secondary_color),
                   child: Column(
                     children: [
-                      Text('0x70161cB8d72306f244cA036140921A311e51b94b',
+                      const Text('0x70161cB8d72306f244cA036140921A311e51b94b',
                           style: TextStyle(fontSize: 13)),
                       TextButton(
                         onPressed: () async {
                           await Clipboard.setData(
-                              ClipboardData(text: '0x70161cB8d72306f244cA036140921A311e51b94b'));
+                              const ClipboardData(text: '0x70161cB8d72306f244cA036140921A311e51b94b'));
                         },
+                        style: TextButton.styleFrom(foregroundColor: Constants.primary_color),
                         child: Text('Copy'.toUpperCase(),
-                            style: TextStyle(
+                            style: const TextStyle(
                                 fontSize: 13,
                                 decoration: TextDecoration.underline,
                                 fontWeight: FontWeight.w800)),
-                        style: TextButton.styleFrom(foregroundColor: Constants.primary_color),
                       )
                     ],
                   ),
@@ -92,13 +92,13 @@ class _DigitalCurrencyState extends State<DigitalCurrency> {
               ],
             ),
           ),
-          SizedBox(height: 15),
+          const SizedBox(height: 15),
           AmountTextField(controller: _amountController),
-          SizedBox(height: 24),
-          Text('Uploading Certificate',
+          const SizedBox(height: 24),
+          const Text('Uploading Certificate',
               style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700)),
-          ChooseFileContainer(),
-          SizedBox(height: 22),
+          const ChooseFileContainer(),
+          const SizedBox(height: 22),
           Center(child: CustomElevatedButton(label: 'Submit', onPressed: (){})),
         ],
       ),

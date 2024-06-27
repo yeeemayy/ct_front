@@ -17,17 +17,17 @@ class Support extends StatelessWidget {
             padding: const EdgeInsets.all(20.0),
             child: Column(
               children: [
-                SizedBox(height: kToolbarHeight),
+                const SizedBox(height: kToolbarHeight),
                 Image.asset('assets/logos/ct1.png', height: 30),
-                SizedBox(height: 30),
+                const SizedBox(height: 30),
                 Image.asset('assets/images/customer-support.png'),
-                SizedBox(height: 27),
+                const SizedBox(height: 27),
                 Container(
-                  padding: EdgeInsets.all(20),
+                  padding: const EdgeInsets.all(20),
                   width: double.maxFinite,
                   decoration: BoxDecoration(
                       color: Constants.secondary_color, borderRadius: BorderRadius.circular(8)),
-                  child: Column(children: [
+                  child: const Column(children: [
                     Text(
                       'Customer Support',
                       style: TextStyle(fontWeight: FontWeight.w800, fontSize: 18),
@@ -38,7 +38,7 @@ class Support extends StatelessWidget {
                             fontSize: 12, fontWeight: FontWeight.w500, color: Color(0xff616264)))
                   ]),
                 ),
-                SizedBox(height: 24),
+                const SizedBox(height: 24),
                 ...[
                   {'icon': CustomIconData.whatsapp, 'label': 'WhatsApp', 'onTap': () {}},
                   {'icon': CustomIconData.telegram, 'label': 'Telegram', 'onTap': () {}}
@@ -52,17 +52,16 @@ class Support extends StatelessWidget {
                                 padding: const EdgeInsets.only(left: 10.0),
                                 child: Text(
                                   e['label'] as String,
-                                  style: TextStyle(fontWeight: FontWeight.w700, fontSize: 13),
+                                  style: const TextStyle(fontWeight: FontWeight.w700, fontSize: 13),
                                 ),
                               ),
                               style: ElevatedButton.styleFrom(
                                   alignment: Alignment.centerLeft,
                                   backgroundColor: Constants.primary_color,
                                   foregroundColor: Colors.white,
-                                  padding: EdgeInsets.symmetric(vertical: 10, horizontal: 16),
-                                  minimumSize: Size(160, 50))),
+                                  padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 16),
+                                  minimumSize: const Size(160, 50))),
                         ))
-                    .toList()
               ],
             ),
           )),

@@ -38,15 +38,15 @@ class _LoginState extends State<Login> {
             child: Column(
               children: [
                 SizedBox(height: MediaQuery.of(context).size.height * 0.25),
-                Text('Login to your account',
+                const Text('Login to your account',
                     style: TextStyle(fontWeight: FontWeight.w800, fontSize: 20)),
-                SizedBox(height: 16),
+                const SizedBox(height: 16),
                 RichText(
-                    text: TextSpan(style: TextStyle(fontSize: 14), children: [
-                  TextSpan(text: 'No account yet? ', style: TextStyle(color: Constants.grey_text)),
+                    text: TextSpan(style: const TextStyle(fontSize: 14), children: [
+                  const TextSpan(text: 'No account yet? ', style: TextStyle(color: Constants.grey_text)),
                   TextSpan(
                       text: 'Create an account.',
-                      style: TextStyle(color: Constants.primary_color, fontWeight: FontWeight.w700),
+                      style: const TextStyle(color: Constants.primary_color, fontWeight: FontWeight.w700),
                       recognizer: TapGestureRecognizer()
                         ..onTap = () => Navigator.pushNamed(context, Routes.create_account)),
                 ])),
@@ -70,15 +70,15 @@ class _LoginState extends State<Login> {
                 ),
                 TextButton(
                   onPressed: () {},
-                  child: Text('Forgot Password'),
                   style: TextButton.styleFrom(foregroundColor: Constants.primary_color),
+                  child: const Text('Forgot Password'),
                 ),
-                SizedBox(height: 48),
+                const SizedBox(height: 48),
                 CustomElevatedButton(
                     label: 'Login',
                     onPressed: () => Navigator.pushReplacementNamed(context, Routes.main)),
-                Spacer(),
-                CopyrightText(textColor: Colors.white)
+                const Spacer(),
+                const CopyrightText(textColor: Colors.white)
               ],
             ),
           )),

@@ -20,7 +20,7 @@ class DetailRow extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text(title, style: TextStyle(fontSize: 11, color: Constants.grey_text)),
+          Text(title, style: const TextStyle(fontSize: 11, color: Constants.grey_text)),
           Text(content,
               style: TextStyle(
                   fontSize: 11, fontWeight: boldContent ? FontWeight.w700 : FontWeight.normal))

@@ -458,7 +458,6 @@ class _CandleChartState extends State<CandleChart> {
 
   @override
   Widget build(BuildContext context) {
-    print(data.length);
     final List<double> yValuesLow = data.map((data) => data.low).toList();
     final List<double> yValuesHigh = data.map((data) => data.high).toList();
     final double minValue =

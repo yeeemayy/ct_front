@@ -39,25 +39,24 @@ class _EditProfileState extends State<EditProfile> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text('Personal Details', style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700)),
-              SizedBox(height: 8),
+              const Text('Personal Details', style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700)),
+              const SizedBox(height: 8),
               IntrinsicHeight(
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
                     Container(
-                      margin: EdgeInsets.symmetric(vertical: 8.0),
+                      margin: const EdgeInsets.symmetric(vertical: 8.0),
                       decoration: BoxDecoration(
                           color: Colors.white,
-                          border: Border.all(color: Color(0xffdbe0e8)),
+                          border: Border.all(color: const Color(0xffdbe0e8)),
                           borderRadius: BorderRadius.circular(10)),
                       child: CountryCodePicker(
                         onChanged: (countryCode) {
-                          print(countryCode.dialCode);
                           this.countryCode = countryCode.dialCode ?? "+60";
                         },
                         initialSelection: 'MY',
-                        favorite: ['+60', 'MY'],
+                        favorite: const ['+60', 'MY'],
                         showCountryOnly: false,
                         showOnlyCountryWhenClosed: false,
                         alignLeft: false,
@@ -65,24 +64,24 @@ class _EditProfileState extends State<EditProfile> {
                             filled: true,
                             fillColor: Colors.white,
                             hintText: 'Search Country',
-                            hintStyle: TextStyle(fontSize: 12, color: Color(0xffc5c5c5)),
-                            prefixIcon: Icon(
+                            hintStyle: const TextStyle(fontSize: 12, color: Color(0xffc5c5c5)),
+                            prefixIcon: const Icon(
                               Icons.search,
                               size: 16,
                               color: Constants.primary_color,
                             ),
                             enabledBorder: OutlineInputBorder(
-                                borderSide: BorderSide(color: Color(0xffcccccc)),
+                                borderSide: const BorderSide(color: Color(0xffcccccc)),
                                 borderRadius: BorderRadius.circular(4)),
                             focusedBorder: OutlineInputBorder(
-                                borderSide: BorderSide(color: Constants.primary_color),
+                                borderSide: const BorderSide(color: Constants.primary_color),
                                 borderRadius: BorderRadius.circular(4)),
                             errorBorder: OutlineInputBorder(
-                                borderSide: BorderSide(color: Colors.red),
+                                borderSide: const BorderSide(color: Colors.red),
                                 borderRadius: BorderRadius.circular(4))),
                       ),
                     ),
-                    SizedBox(width: 8),
+                    const SizedBox(width: 8),
                     Expanded(
                         child: CustomTextField(
                       textEditingController: _phoneController,
@@ -101,7 +100,7 @@ class _EditProfileState extends State<EditProfile> {
               CustomTextField(textEditingController: _usernameController, hintText: 'Username'),
               CustomTextField(textEditingController: _fullNameController, hintText: 'Full Name'),
               CustomTextField(textEditingController: _emailController, hintText: 'Email'),
-              SizedBox(height: 40),
+              const SizedBox(height: 40),
               Center(child: CustomElevatedButton(label: 'Save', onPressed: () {}))
             ],
           ),

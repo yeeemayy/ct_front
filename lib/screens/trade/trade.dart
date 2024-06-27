@@ -3,9 +3,7 @@ import 'package:ct_app/custom_widgets/custom_tabbar.dart';
 import 'package:ct_app/screens/chart/candle_chart.dart';
 import 'package:ct_app/screens/reusable_widget/flag_stack.dart';
 import 'package:ct_app/screens/trade/order_form.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class Trade extends StatefulWidget {
   const Trade({super.key});
@@ -33,8 +31,8 @@ class _TradeState extends State<Trade> with SingleTickerProviderStateMixin {
     return SingleChildScrollView(
       child: Column(
         children: [
-          Padding(
-            padding: const EdgeInsets.all(20.0),
+          const Padding(
+            padding: EdgeInsets.all(20.0),
             child: Row(
               children: [
                 FlagStack(
@@ -75,7 +73,7 @@ class _TradeState extends State<Trade> with SingleTickerProviderStateMixin {
           SizedBox(
               height: 60,
               child: ListView(
-                padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
                 scrollDirection: Axis.horizontal,
                 children: ['1M', '5M', '15M', '30M', '1H', '1D']
                     .map((e) => Padding(
@@ -86,6 +84,13 @@ class _TradeState extends State<Trade> with SingleTickerProviderStateMixin {
                                 _selectedDuration = e;
                               });
                             },
+                            style: ElevatedButton.styleFrom(
+                                elevation: 0,
+                                backgroundColor: e == _selectedDuration
+                                    ? Constants.primary_color
+                                    : const Color(0xffeeeeee),
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(10))),
                             child: Text(
                               e,
                               style: TextStyle(
@@ -94,19 +99,12 @@ class _TradeState extends State<Trade> with SingleTickerProviderStateMixin {
                                       ? Colors.white
                                       : Theme.of(context).textTheme.bodyMedium?.color),
                             ),
-                            style: ElevatedButton.styleFrom(
-                                elevation: 0,
-                                backgroundColor: e == _selectedDuration
-                                    ? Constants.primary_color
-                                    : Color(0xffeeeeee),
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(10))),
                           ),
                         ))
                     .toList(),
               )),
-          Padding(
-            padding: const EdgeInsets.all(20.0),
+          const Padding(
+            padding: EdgeInsets.all(20.0),
             child: CandleChart(),
           ),
           Padding(
@@ -115,9 +113,9 @@ class _TradeState extends State<Trade> with SingleTickerProviderStateMixin {
               children: [
                 CustomTabBar(
                   tabController: _tabController,
-                  tabTitles: ['Market Price', 'Pending Orders'],
+                  tabTitles: const ['Market Price', 'Pending Orders'],
                 ),
-                [OrderForm(showAmount: false), OrderForm()][_tabController.index]
+                [const OrderForm(showAmount: false), const OrderForm()][_tabController.index]
               ],
             ),
           ),

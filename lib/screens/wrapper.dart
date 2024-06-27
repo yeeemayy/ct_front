@@ -21,13 +21,13 @@ class _WrapperState extends State<Wrapper> {
   Widget _getBody() {
     switch (_currentPageIndex) {
       case 0:
-        return Home();
+        return const Home();
       case 1:
-        return Order();
+        return const Order();
       case 2:
-        return Trade();
+        return const Trade();
       case 3:
-        return Asset();
+        return const Asset();
       case 4:
         return Profile(
           switchTab: (index) {
@@ -65,7 +65,7 @@ class _WrapperState extends State<Wrapper> {
         elevation: 1,
         centerTitle: _currentPageIndex != 0,
         title: _currentPageIndex == 0
-            ? Text(
+            ? const Text(
                 'Welcome Back, yy01',
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700),
               )
@@ -84,11 +84,11 @@ class _WrapperState extends State<Wrapper> {
       floatingActionButton: Container(
         height: 65,
         width: 65,
-        margin: EdgeInsets.only(top: 20),
+        margin: const EdgeInsets.only(top: 20),
         child: FittedBox(
           child: FloatingActionButton(
               backgroundColor: Colors.white,
-              shape: CircleBorder(),
+              shape: const CircleBorder(),
               onPressed: () {
                 setState(() {
                   _currentPageIndex = 2;
@@ -106,8 +106,8 @@ class _WrapperState extends State<Wrapper> {
         color: Colors.white,
         surfaceTintColor: Colors.transparent,
         notchMargin: 8,
-        padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-        shape: CircularNotchedRectangle(),
+        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+        shape: const CircularNotchedRectangle(),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: _bottomAppBarItems(context)
@@ -125,7 +125,7 @@ class _WrapperState extends State<Wrapper> {
                       child: Container(
                         constraints:
                             BoxConstraints(minWidth: MediaQuery.of(context).size.width / 6),
-                        padding: EdgeInsets.all(10),
+                        padding: const EdgeInsets.all(10),
                         decoration: i != 2
                             ? BoxDecoration(
                                 color: _currentPageIndex == i
@@ -142,7 +142,7 @@ class _WrapperState extends State<Wrapper> {
                                 color: _currentPageIndex == i
                                     ? Constants.primary_color
                                     : Constants.grey1),
-                            SizedBox(height: 10),
+                            const SizedBox(height: 10),
                             Text(
                               i != 2 ? e['title'] : '',
                               style: TextStyle(

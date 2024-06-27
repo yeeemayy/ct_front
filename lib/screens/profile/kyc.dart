@@ -36,14 +36,14 @@ class _KYCState extends State<KYC> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text('Enter Your ID Details',
+              const Text('Enter Your ID Details',
                   style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700)),
-              SizedBox(height: 12),
+              const SizedBox(height: 12),
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 8.0),
                 child: CustomDropdownButton<String>(
                   hint: 'Choose Document Type',
-                  items: ['Identification Card', 'Passport'],
+                  items: const ['Identification Card', 'Passport'],
                   valueListenable: _selectedDocumentType,
                   onChanged: (value) {
                     _selectedDocumentType.value = value;
@@ -59,15 +59,15 @@ class _KYCState extends State<KYC> {
               CustomTextField(textEditingController: _nameController, hintText: 'Name as IC'),
               CustomTextField(
                   textEditingController: _icController, hintText: 'Identification Number'),
-              SizedBox(height: 32),
-              Text('Upload Document', style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700)),
-              SizedBox(height: 12),
+              const SizedBox(height: 32),
+              const Text('Upload Document', style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700)),
+              const SizedBox(height: 12),
               ...List.generate(
                   2,
                   (index) => Container(
                         width: double.maxFinite,
-                        margin: EdgeInsets.symmetric(vertical: 8),
-                        padding: EdgeInsets.symmetric(vertical: 16, horizontal: 20),
+                        margin: const EdgeInsets.symmetric(vertical: 8),
+                        padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 20),
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(12),
                             border: Border.all(color: Constants.grey2)),
@@ -75,20 +75,20 @@ class _KYCState extends State<KYC> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(index == 0 ? 'Front Image' : 'Back Image',
-                                style: TextStyle(fontSize: 12, fontWeight: FontWeight.w700)),
-                            SizedBox(height: 8),
-                            Padding(
-                              padding: const EdgeInsets.symmetric(vertical: 8.0),
+                                style: const TextStyle(fontSize: 12, fontWeight: FontWeight.w700)),
+                            const SizedBox(height: 8),
+                            const Padding(
+                              padding: EdgeInsets.symmetric(vertical: 8.0),
                               child: ChooseFileContainer(minHeight: 160),
                             ),
-                            Text(
+                            const Text(
                               'Check the following:\n\n∙ Valid unexpired government ID\n∙ All four corners are showing\n∙ Text is clear\n∙ Format in PNG, JPG, PDF',
                               style: TextStyle(color: Constants.grey_text, fontSize: 12),
                             )
                           ],
                         ),
                       )),
-              SizedBox(height: 32),
+              const SizedBox(height: 32),
               Center(child: CustomElevatedButton(label: 'Submit', onPressed: (){}))
             ],
           ),

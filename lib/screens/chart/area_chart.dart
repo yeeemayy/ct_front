@@ -52,7 +52,7 @@ class AreaChart extends StatelessWidget {
     return SfCartesianChart(
 
       plotAreaBorderColor: Colors.transparent,
-        primaryXAxis: NumericAxis(isVisible: false),
+        primaryXAxis: const NumericAxis(isVisible: false),
         primaryYAxis: NumericAxis(isVisible: false, minimum: minValue, maximum: maxValue, interval: 50, rangePadding: ChartRangePadding.none),
         series: <CartesianSeries>[
           // Renders area chart

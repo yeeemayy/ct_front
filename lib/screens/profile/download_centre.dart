@@ -17,17 +17,17 @@ class DownloadCentre extends StatelessWidget {
             padding: const EdgeInsets.all(20.0),
             child: Column(
               children: [
-                SizedBox(height: kToolbarHeight),
+                const SizedBox(height: kToolbarHeight),
                 Image.asset('assets/logos/ct1.png', height: 30),
-                SizedBox(height: 30),
-              Icon(CustomIconData.download_centre, size: 50, color: Constants.primary_color),
-                SizedBox(height: 27),
+                const SizedBox(height: 30),
+              const Icon(CustomIconData.download_centre, size: 50, color: Constants.primary_color),
+                const SizedBox(height: 27),
                 Container(
-                  padding: EdgeInsets.all(20),
+                  padding: const EdgeInsets.all(20),
                   width: double.maxFinite,
                   decoration: BoxDecoration(
                       color: Constants.secondary_color, borderRadius: BorderRadius.circular(8)),
-                  child: Column(children: [
+                  child: const Column(children: [
                     Text(
                       'Download CT Apps Now!',
                       style: TextStyle(fontWeight: FontWeight.w800, fontSize: 18),
@@ -38,7 +38,7 @@ class DownloadCentre extends StatelessWidget {
                             fontSize: 12, fontWeight: FontWeight.w500, color: Color(0xff616264)))
                   ]),
                 ),
-                SizedBox(height: 24),
+                const SizedBox(height: 24),
                 ...[
                   {'icon': CustomIconData.android, 'label': 'Android App', 'onTap': () {}},
                   {'icon': CustomIconData.ios, 'label': 'iOS App', 'onTap': () {}}
@@ -52,17 +52,16 @@ class DownloadCentre extends StatelessWidget {
                         padding: const EdgeInsets.only(left: 10.0),
                         child: Text(
                           e['label'] as String,
-                          style: TextStyle(fontWeight: FontWeight.w700, fontSize: 13),
+                          style: const TextStyle(fontWeight: FontWeight.w700, fontSize: 13),
                         ),
                       ),
                       style: ElevatedButton.styleFrom(
                           alignment: Alignment.centerLeft,
                           backgroundColor: Constants.primary_color,
                           foregroundColor: Colors.white,
-                          padding: EdgeInsets.symmetric(vertical: 10, horizontal: 16),
-                          minimumSize: Size(170, 50))),
+                          padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 16),
+                          minimumSize: const Size(170, 50))),
                 ))
-                    .toList()
               ],
             ),
           )),

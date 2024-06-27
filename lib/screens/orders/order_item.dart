@@ -7,13 +7,13 @@ class OrderItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 8),
-      padding: EdgeInsets.symmetric(vertical: 16, horizontal: 20),
+      margin: const EdgeInsets.symmetric(vertical: 8),
+      padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 20),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10), color: Constants.secondary_color),
       child: Column(
         children: [
-          Row(
+          const Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text('XAUUSD', style: TextStyle(
@@ -24,11 +24,11 @@ class OrderItem extends StatelessWidget {
               ))
             ],
           ),
-          SizedBox(height: 8),
+          const SizedBox(height: 8),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text('2175.79  ->  2175.53', style: TextStyle(
+              const Text('2175.79  ->  2175.53', style: TextStyle(
                   fontSize: 11, fontWeight: FontWeight.w600
               )),
               Container(
@@ -39,18 +39,18 @@ class OrderItem extends StatelessWidget {
                 child: Row(
                   children: [
                     Container(
-                      padding: EdgeInsets.symmetric(horizontal: 8),
-                      decoration: BoxDecoration(
+                      padding: const EdgeInsets.symmetric(horizontal: 8),
+                      decoration: const BoxDecoration(
                           borderRadius: BorderRadius.horizontal(left: Radius.circular(5)),
 
                           color: Constants.primary_color
                       ),
-                      child: Text('Buy', style: TextStyle(
+                      child: const Text('Buy', style: TextStyle(
                           fontSize: 11, color: Colors.white
                       ),),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                    const Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 8.0),
                       child: Text('0.1 Lots', style: TextStyle(
                           fontSize: 10 ,color: Constants.primary_color
                       ),),
@@ -60,7 +60,7 @@ class OrderItem extends StatelessWidget {
               )
             ],
           ),
-          Row(crossAxisAlignment: CrossAxisAlignment.end,
+          const Row(crossAxisAlignment: CrossAxisAlignment.end,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text('2024-03-12 06:41:15', style: TextStyle(

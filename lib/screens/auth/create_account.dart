@@ -56,25 +56,24 @@ class _CreateAccountState extends State<CreateAccount> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text('Personal Details', style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700)),
-              SizedBox(height: 8),
+              const Text('Personal Details', style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700)),
+              const SizedBox(height: 8),
               IntrinsicHeight(
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
                     Container(
-                      margin: EdgeInsets.symmetric(vertical: 8.0),
+                      margin: const EdgeInsets.symmetric(vertical: 8.0),
                       decoration: BoxDecoration(
                           color: Colors.white,
-                          border: Border.all(color: Color(0xffdbe0e8)),
+                          border: Border.all(color: const Color(0xffdbe0e8)),
                           borderRadius: BorderRadius.circular(10)),
                       child: CountryCodePicker(
                         onChanged: (countryCode) {
-                          print(countryCode.dialCode);
                           this.countryCode = countryCode.dialCode ?? "+60";
                         },
                         initialSelection: 'MY',
-                        favorite: ['+60', 'MY'],
+                        favorite: const ['+60', 'MY'],
                         showCountryOnly: false,
                         showOnlyCountryWhenClosed: false,
                         alignLeft: false,
@@ -82,24 +81,24 @@ class _CreateAccountState extends State<CreateAccount> {
                             filled: true,
                             fillColor: Colors.white,
                             hintText: 'Search Country',
-                            hintStyle: TextStyle(fontSize: 12, color: Color(0xffc5c5c5)),
-                            prefixIcon: Icon(
+                            hintStyle: const TextStyle(fontSize: 12, color: Color(0xffc5c5c5)),
+                            prefixIcon: const Icon(
                               Icons.search,
                               size: 16,
                               color: Constants.primary_color,
                             ),
                             enabledBorder: OutlineInputBorder(
-                                borderSide: BorderSide(color: Color(0xffcccccc)),
+                                borderSide: const BorderSide(color: Color(0xffcccccc)),
                                 borderRadius: BorderRadius.circular(4)),
                             focusedBorder: OutlineInputBorder(
-                                borderSide: BorderSide(color: Constants.primary_color),
+                                borderSide: const BorderSide(color: Constants.primary_color),
                                 borderRadius: BorderRadius.circular(4)),
                             errorBorder: OutlineInputBorder(
-                                borderSide: BorderSide(color: Colors.red),
+                                borderSide: const BorderSide(color: Colors.red),
                                 borderRadius: BorderRadius.circular(4))),
                       ),
                     ),
-                    SizedBox(width: 8),
+                    const SizedBox(width: 8),
                     Expanded(
                         child: CustomTextField(
                       textEditingController: _phoneController,
@@ -118,12 +117,12 @@ class _CreateAccountState extends State<CreateAccount> {
               CustomTextField(textEditingController: _usernameController, hintText: 'Username'),
               CustomTextField(textEditingController: _fullNameController, hintText: 'Full Name'),
               CustomTextField(textEditingController: _emailController, hintText: 'Email'),
-              SizedBox(height: 24),
+              const SizedBox(height: 24),
               CustomTextField(
                   textEditingController: _invitationCodeController,
                   label: 'Referral Programme',
                   hintText: 'Invitation Code'),
-              SizedBox(height: 24),
+              const SizedBox(height: 24),
               CustomTextField(
                 textEditingController: _passwordController,
                 label: 'Password & PIN',
@@ -145,7 +144,7 @@ class _CreateAccountState extends State<CreateAccount> {
                 },
               ),
               PasswordStrengthIndicator(password: _passwordController.text),
-              SizedBox(height: 24),
+              const SizedBox(height: 24),
               CustomTextField(
                 textEditingController: _securityPinController,
                 hintText: 'Security PIN',
@@ -167,7 +166,7 @@ class _CreateAccountState extends State<CreateAccount> {
                 inputFormatters: [FilteringTextInputFormatter.digitsOnly],
               ),
               PasswordStrengthIndicator(password: _securityPinController.text, type: 2),
-              SizedBox(height: 24),
+              const SizedBox(height: 24),
               CustomTextField(
                   label: 'Email Verification',
                   textEditingController: _verificationCodeController,
@@ -186,11 +185,11 @@ class _CreateAccountState extends State<CreateAccount> {
                           });
                         }
                       },
-                      shape: CircleBorder(),
+                      shape: const CircleBorder(),
                       activeColor: Constants.primary_color),
                 ),
                 title: RichText(
-                    text: TextSpan(
+                    text: const TextSpan(
                         style: TextStyle(fontSize: 12, color: Constants.grey_text),
                         children: [
                       TextSpan(text: 'I agree to the '),
@@ -202,7 +201,7 @@ class _CreateAccountState extends State<CreateAccount> {
                           text: 'Privacy Policy', style: TextStyle(color: Constants.primary_color)),
                     ])),
               ),
-              SizedBox(height: 24),
+              const SizedBox(height: 24),
               Align(
                 alignment: Alignment.center,
                 child: Column(
@@ -219,9 +218,9 @@ class _CreateAccountState extends State<CreateAccount> {
                           buttonText: 'OK',
                           onButtonPressed: ()=> Navigator.pop(context));
                         }),
-                    SizedBox(height: 16),
+                    const SizedBox(height: 16),
                     RichText(
-                        text: TextSpan(
+                        text: const TextSpan(
                             style: TextStyle(fontSize: 14, color: Constants.grey_text),
                             children: [
                           TextSpan(text: 'Already have an account? '),
@@ -229,7 +228,7 @@ class _CreateAccountState extends State<CreateAccount> {
                               text: 'Login here', style: TextStyle(color: Constants.primary_color)),
                         ])),
                     SizedBox(height: MediaQuery.of(context).size.height * 0.1),
-                    CopyrightText()
+                    const CopyrightText()
                   ],
                 ),
               )

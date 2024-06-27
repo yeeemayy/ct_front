@@ -1,9 +1,7 @@
 import 'package:ct_app/constants/constants.dart';
 import 'package:ct_app/screens/chart/area_chart.dart';
 import 'package:ct_app/screens/reusable_widget/flag_stack.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:marquee/marquee.dart';
 import 'package:tabbar_gradient_indicator/tabbar_gradient_indicator.dart';
 
@@ -37,15 +35,15 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
         children: [
           Image.asset('assets/images/home-banner.png'),
           Container(
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
                 border: Border.symmetric(horizontal: BorderSide(color: Color(0xffDBE0E8)))),
             height: 46,
             child: Row(
               children: [
                 Container(
                   color: Constants.secondary_color,
-                  padding: EdgeInsets.symmetric(horizontal: 15, vertical: 14),
-                  child: Text(
+                  padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 14),
+                  child: const Text(
                     'Latest News',
                     style: TextStyle(
                         fontSize: 12, fontWeight: FontWeight.w700, color: Constants.primary_color),
@@ -55,7 +53,7 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                   child: Marquee(
                     text:
                         'Central Tanshi 10th Anniversary Celebration 10th Anniversary Celebration',
-                    style: TextStyle(fontSize: 12),
+                    style: const TextStyle(fontSize: 12),
                   ),
                 )
               ],
@@ -72,16 +70,16 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                 .toList(),
             isScrollable: true,
             dividerColor: Colors.transparent,
-            padding: EdgeInsets.symmetric(vertical: 16),
+            padding: const EdgeInsets.symmetric(vertical: 16),
             labelStyle: TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.w700,
                 color: Theme.of(context).textTheme.bodyMedium?.color),
-            labelPadding: EdgeInsets.symmetric(horizontal: 25),
-            unselectedLabelStyle: TextStyle(fontSize: 14),
+            labelPadding: const EdgeInsets.symmetric(horizontal: 25),
+            unselectedLabelStyle: const TextStyle(fontSize: 14),
             indicator: TabBarGradientIndicator(gradientColor: [
-              Color(0xff004DA1).withOpacity(1),
-              Color(0xff004DA100).withOpacity(0)
+              const Color(0xff004DA1).withOpacity(1),
+              const Color(0xff004DA1).withOpacity(0)
             ], indicatorWidth: 5),
             tabAlignment: TabAlignment.start,
           ),
@@ -89,8 +87,8 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
               context: context,
               tiles: List.generate(
                   10,
-                  (index) => Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 16.0, horizontal: 20),
+                  (index) => const Padding(
+                        padding: EdgeInsets.symmetric(vertical: 16.0, horizontal: 20),
                         child: Row(
                           children: [
                             FlagStack(
@@ -137,7 +135,7 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                             Expanded(child: SizedBox(height: 50, child: AreaChart()))
                           ],
                         ),
-                      ))).toList()
+                      )))
         ],
       ),
     );

@@ -13,7 +13,7 @@ class SingleChildScrollViewExpanded extends StatelessWidget {
   final DragStartBehavior dragStartBehavior;
 
   const SingleChildScrollViewExpanded({
-    Key? key,
+    super.key,
     this.scrollDirection = Axis.vertical,
     this.reverse = false,
     this.padding,
@@ -27,8 +27,7 @@ class SingleChildScrollViewExpanded extends StatelessWidget {
   'Primary ScrollViews obtain their ScrollController via inheritance from a PrimaryScrollController widget. '
       'You cannot both set primary to true and pass an explicit controller.'),
         primary = primary ??
-            controller == null && identical(scrollDirection, Axis.vertical),
-        super(key: key);
+            controller == null && identical(scrollDirection, Axis.vertical);
 
   @override
   Widget build(BuildContext context) {

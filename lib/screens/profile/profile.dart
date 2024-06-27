@@ -1,9 +1,7 @@
 import 'package:ct_app/constants/constants.dart';
 import 'package:ct_app/constants/custom_icon_data.dart';
 import 'package:ct_app/routes/routes.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class Profile extends StatelessWidget {
   final Function(int) switchTab;
@@ -26,8 +24,8 @@ class Profile extends StatelessWidget {
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
-                      CircleAvatar(radius: 31.25),
-                      SizedBox(width: 15),
+                      const CircleAvatar(radius: 31.25),
+                      const SizedBox(width: 15),
                       Expanded(
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -36,16 +34,16 @@ class Profile extends StatelessWidget {
                                 onPressed: () => Navigator.pushNamed(context, Routes.edit_profile),
                                 style: TextButton.styleFrom(
                                     foregroundColor: Colors.white, padding: EdgeInsets.zero),
-                                icon: Text('yy01',
+                                icon: const Text('yy01',
                                     style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700)),
-                                label: Icon(CustomIconData.edit, size: 15)),
+                                label: const Icon(CustomIconData.edit, size: 15)),
                             Container(
-                              padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(10),
                                 border: Border.all(color: Colors.white),
                               ),
-                              child: Text(
+                              child: const Text(
                                 'Member',
                                 style: TextStyle(fontSize: 12.5, color: Colors.white),
                               ),
@@ -55,18 +53,18 @@ class Profile extends StatelessWidget {
                       )
                     ],
                   ),
-                  SizedBox(height: 24),
+                  const SizedBox(height: 24),
                   InkWell(
                     onTap: () => switchTab(3),
                     child: Container(
-                      padding: EdgeInsets.symmetric(vertical: 18, horizontal: 20),
+                      padding: const EdgeInsets.symmetric(vertical: 18, horizontal: 20),
                       decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(18),
-                          boxShadow: [
+                          boxShadow: const [
                             BoxShadow(color: Colors.black26, blurRadius: 36, offset: Offset(0, 4))
                           ]),
-                      child: Row(
+                      child: const Row(
                         children: [
                           Expanded(
                             child: Column(
@@ -83,7 +81,7 @@ class Profile extends StatelessWidget {
                       ),
                     ),
                   ),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                   _buildSection('Account Verification', [
                     {
                       'icon': CustomIconData.kyc,
@@ -143,12 +141,12 @@ class Profile extends StatelessWidget {
                       child: ElevatedButton.icon(
                         onPressed: () => Navigator.pushNamedAndRemoveUntil(
                             context, Routes.splash, (route) => false),
-                        icon: Icon(
+                        icon: const Icon(
                           Icons.logout,
                           size: 20,
                           color: Colors.red,
                         ),
-                        label: Text(
+                        label: const Text(
                           'Log Out',
                           style: TextStyle(
                               fontSize: 13, fontWeight: FontWeight.w700, color: Constants.red),
@@ -156,10 +154,10 @@ class Profile extends StatelessWidget {
                         style: ElevatedButton.styleFrom(
                             elevation: 0,
                             backgroundColor: Colors.transparent,
-                            minimumSize: Size(150, 40),
+                            minimumSize: const Size(150, 40),
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(30),
-                                side: BorderSide(color: Colors.red))),
+                                side: const BorderSide(color: Colors.red))),
                       ),
                     ),
                   ),
@@ -180,19 +178,19 @@ class Profile extends StatelessWidget {
         children: [
           Text(
             sectionTitle,
-            style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700),
+            style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w700),
           ),
-          SizedBox(height: 8),
+          const SizedBox(height: 8),
           ...buttons
               .map((e) => ListTile(
-                  visualDensity: VisualDensity(vertical: -2),
+                  visualDensity: const VisualDensity(vertical: -2),
                   onTap: e['onTap'],
                   contentPadding: EdgeInsets.zero,
                   leading: Icon(e['icon'], size: 20, color: Constants.primary_color),
-                  title: Text(e['title'], style: TextStyle(fontSize: 14)),
+                  title: Text(e['title'], style: const TextStyle(fontSize: 14)),
                   trailing:
-                      Icon(Icons.keyboard_arrow_right, size: 20, color: Constants.primary_color)))
-              .toList()
+                      const Icon(Icons.keyboard_arrow_right, size: 20, color: Constants.primary_color)))
+
         ],
       ),
     );

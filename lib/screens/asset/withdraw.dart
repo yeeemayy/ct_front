@@ -41,15 +41,15 @@ class _WithdrawState extends State<Withdraw> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 AmountTextField(controller: _amountController),
-                SizedBox(height: 24),
-                Text('Withdraw Address',
+                const SizedBox(height: 24),
+                const Text('Withdraw Address',
                     style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700)),
                 Container(
-                  margin: EdgeInsets.symmetric(vertical: 16),
-                  padding: EdgeInsets.symmetric(vertical: 13, horizontal: 16),
+                  margin: const EdgeInsets.symmetric(vertical: 16),
+                  padding: const EdgeInsets.symmetric(vertical: 13, horizontal: 16),
                   decoration: BoxDecoration(
                       color: Constants.secondary_color, borderRadius: BorderRadius.circular(10)),
-                  child: Column(
+                  child: const Column(
                     children: [
                       DetailRow(title: 'Bank Name', content: 'CIMB Bank', padding: 3),
                       DetailRow(title: 'Bank Holder Name', content: 'Tan Ah Kau', padding: 3),
@@ -57,11 +57,11 @@ class _WithdrawState extends State<Withdraw> {
                     ],
                   ),
                 ),
-                SizedBox(height: 8),
-                DetailRow(title: 'Withdraw Amount', content: '\S 1.00', padding: 4),
-                DetailRow(title: 'Handling Fee', content: '\S 0.00', padding: 4),
-                DetailRow(title: 'Total Received', content: '\S 1.00', padding: 4),
-                SizedBox(height: 40),
+                const SizedBox(height: 8),
+                const DetailRow(title: 'Withdraw Amount', content: '\$ 1.00', padding: 4),
+                const DetailRow(title: 'Handling Fee', content: '\$ 0.00', padding: 4),
+                const DetailRow(title: 'Total Received', content: '\$ 1.00', padding: 4),
+                const SizedBox(height: 40),
                 Center(child: CustomElevatedButton(label: 'Withdraw', onPressed: () {}))
               ],
             ),

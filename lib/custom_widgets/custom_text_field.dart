@@ -16,8 +16,8 @@ class CustomTextField extends StatelessWidget {
   final String? Function(String?)? validator;
   final int? maxLines;
   final double labelFontSize;
-  CustomTextField(
-      {Key? key,
+  const CustomTextField(
+      {super.key,
       required this.textEditingController,
       this.label,
       this.hintText,
@@ -30,13 +30,12 @@ class CustomTextField extends StatelessWidget {
       this.inputFormatters,
       this.validator,
       this.maxLines = 1,
-      this.labelFontSize = 14})
-      : super(key: key);
+      this.labelFontSize = 14});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(vertical: 8.0),
+      padding: const EdgeInsets.symmetric(vertical: 8.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -45,13 +44,13 @@ class CustomTextField extends StatelessWidget {
               label!,
               style: TextStyle(fontSize: labelFontSize, fontWeight: FontWeight.w700),
             ),
-            SizedBox(height: 8),
+            const SizedBox(height: 8),
           ],
           TextFormField(
             controller: textEditingController,
             obscureText: obscureText,
             textAlign: TextAlign.left,
-            style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700),
+            style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w700),
             maxLines: maxLines,
             cursorColor: Constants.primary_color,
             keyboardType: keyboardType,
@@ -63,7 +62,7 @@ class CustomTextField extends StatelessWidget {
             decoration: InputDecoration(
                 hintText: hintText,
                 hintStyle:
-                    TextStyle(fontSize: 12, color: Color(0xff8793a3), fontWeight: FontWeight.w400),
+                    const TextStyle(fontSize: 12, color: Color(0xff8793a3), fontWeight: FontWeight.w400),
                 // prefixIcon: label.isNotEmpty
                 //     ? Column(
                 //         mainAxisAlignment: MainAxisAlignment.center,
@@ -79,20 +78,20 @@ class CustomTextField extends StatelessWidget {
                 suffixIcon: suffixIcon,
                 filled: true,
                 fillColor: Colors.white,
-                helperStyle: TextStyle(fontSize: 13, color: Color(0xff898989)),
+                helperStyle: const TextStyle(fontSize: 13, color: Color(0xff898989)),
                 errorMaxLines: 2,
-                contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 15),
+                contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 15),
                 enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Color(0xffdbe0e8)),
+                    borderSide: const BorderSide(color: Color(0xffdbe0e8)),
                     borderRadius: BorderRadius.circular(10)),
                 focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Constants.primary_color),
+                    borderSide: const BorderSide(color: Constants.primary_color),
                     borderRadius: BorderRadius.circular(10)),
                 errorBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.red),
+                    borderSide: const BorderSide(color: Colors.red),
                     borderRadius: BorderRadius.circular(10)),
                 focusedErrorBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.red),
+                    borderSide: const BorderSide(color: Colors.red),
                     borderRadius: BorderRadius.circular(10))),
           ),
         ],

@@ -18,16 +18,16 @@ class Referral extends StatelessWidget {
           padding: const EdgeInsets.all(20.0),
           child: Column(
             children: [
-              Text('Refer more, Earn more!',
+              const Text('Refer more, Earn more!',
                   style: TextStyle(
                       fontSize: 20, fontWeight: FontWeight.w700, color: Constants.primary_color)),
-              SizedBox(height: 4),
-              Text('Invite Your Friends',
+              const SizedBox(height: 4),
+              const Text('Invite Your Friends',
                   style: TextStyle(
                       fontSize: 12, fontWeight: FontWeight.w600, color: Constants.primary_color)),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               Container(
-                padding: EdgeInsets.all(5),
+                padding: const EdgeInsets.all(5),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(8),
                   border: Border.all(color: Constants.primary_color, width: 2),
@@ -38,19 +38,19 @@ class Referral extends StatelessWidget {
                   size: MediaQuery.of(context).size.width / 3,
                 ),
               ),
-              SizedBox(height: 8),
-              Text(
+              const SizedBox(height: 8),
+              const Text(
                 'Scan QR Code or copy referral code',
                 style: TextStyle(fontSize: 12, color: Constants.grey_text),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               ElevatedButton.icon(
                 onPressed: () {},
-                icon: Text(
+                icon: const Text(
                   'MDEX01',
                   style: TextStyle(fontSize: 12, fontWeight: FontWeight.w700),
                 ),
-                label: Icon(
+                label: const Icon(
                   Icons.copy,
                   color: Constants.primary_color,
                 ),
@@ -59,7 +59,7 @@ class Referral extends StatelessWidget {
                     foregroundColor: Colors.black,
                     backgroundColor: Constants.secondary_color),
               ),
-              SizedBox(height: 24),
+              const SizedBox(height: 24),
               ...[
                 {
                   'icon': CustomIconData.referral_1,
@@ -82,8 +82,8 @@ class Referral extends StatelessWidget {
                               children: [
                                 Container(
                                   width: double.maxFinite,
-                                  margin: EdgeInsets.only(top: 60 / 2),
-                                  padding: EdgeInsets.fromLTRB(24, 45, 24, 12),
+                                  margin: const EdgeInsets.only(top: 60 / 2),
+                                  padding: const EdgeInsets.fromLTRB(24, 45, 24, 12),
                                   decoration: BoxDecoration(
                                     color: Constants.secondary_color,
                                     borderRadius: BorderRadius.circular(10),
@@ -91,12 +91,12 @@ class Referral extends StatelessWidget {
                                   child: Text(
                                     e['label'] as String,
                                     textAlign: TextAlign.center,
-                                    style: TextStyle(fontSize: 12, fontWeight: FontWeight.w500),
+                                    style: const TextStyle(fontSize: 12, fontWeight: FontWeight.w500),
                                   ),
                                 ),
                                 Container(
-                                  padding: EdgeInsets.all(20),
-                                  decoration: BoxDecoration(
+                                  padding: const EdgeInsets.all(20),
+                                  decoration: const BoxDecoration(
                                     color: Constants.primary_color,
                                     shape: BoxShape.circle,
                                   ),
@@ -109,7 +109,7 @@ class Referral extends StatelessWidget {
                               ],
                             ),
                             if (i != 2)
-                              DottedLine(
+                              const DottedLine(
                                 direction: Axis.vertical,
                                 alignment: WrapAlignment.center,
                                 lineLength: 30,
@@ -121,9 +121,8 @@ class Referral extends StatelessWidget {
                           ],
                         ),
                       ))
-                  .values
-                  .toList(),
-              SizedBox(height: 32),
+                  .values,
+              const SizedBox(height: 32),
               CustomElevatedButton(label: 'Copy Link', onPressed: () {})
             ],
           ),

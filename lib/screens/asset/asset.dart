@@ -4,7 +4,6 @@ import 'package:ct_app/routes/routes.dart';
 import 'package:ct_app/screens/asset/transaction_history_item.dart';
 import 'package:ct_app/screens/reusable_widget/custom_number_paginator.dart';
 import 'package:flutter/material.dart';
-import 'package:number_paginator/number_paginator.dart';
 
 class Asset extends StatelessWidget {
   const Asset({super.key});
@@ -12,19 +11,19 @@ class Asset extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(20.0),
+      padding: const EdgeInsets.all(20.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            padding: EdgeInsets.symmetric(vertical: 18, horizontal: 20),
+            padding: const EdgeInsets.symmetric(vertical: 18, horizontal: 20),
             decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(18),
-                boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 4, offset: Offset(0, 4))]),
+                boxShadow: const [BoxShadow(color: Colors.black12, blurRadius: 4, offset: Offset(0, 4))]),
             child: Row(
               children: [
-                Expanded(
+                const Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -57,7 +56,7 @@ class Asset extends StatelessWidget {
                               child: Column(
                                 children: [
                                   Container(
-                                    padding: EdgeInsets.all(10),
+                                    padding: const EdgeInsets.all(10),
                                     decoration: BoxDecoration(
                                         color: Constants.secondary_color,
                                         borderRadius: BorderRadius.circular(8.0)),
@@ -68,28 +67,26 @@ class Asset extends StatelessWidget {
                                       ),
                                     ),
                                   ),
-                                  SizedBox(height: 4),
+                                  const SizedBox(height: 4),
                                   Text(
                                     e['label'] as String,
-                                    style: TextStyle(fontSize: 9),
+                                    style: const TextStyle(fontSize: 9),
                                   )
                                 ],
                               ),
                             ),
                           ),
                         ))
-                    .values
-                    .toList()
-              ],
+                    .values],
             ),
           ),
-          SizedBox(height: 30),
-          Text('Transaction History', style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700)),
-          SizedBox(height: 8),
-          ...List.generate(3, (index) => TransactionHistoryItem()),
-          Spacer(),
-          CustomNumberPaginator(),
-          SizedBox(height: kToolbarHeight),
+          const SizedBox(height: 30),
+          const Text('Transaction History', style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700)),
+          const SizedBox(height: 8),
+          ...List.generate(3, (index) => const TransactionHistoryItem()),
+          const Spacer(),
+          const CustomNumberPaginator(),
+          const SizedBox(height: kToolbarHeight),
         ],
       ),
     );
